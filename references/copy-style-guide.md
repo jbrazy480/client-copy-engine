@@ -20,14 +20,48 @@ If it sounds like a template, a bot, a corporate newsletter, or a marketing emai
 - Use commas and periods instead for pauses and breaks
 - This is the #1 tell that copy is AI-generated
 
-### SMS Rules
+### SMS Rules (MUST SOUND LIKE A REAL HUMAN TEXTING)
+
+THE TEST: Before writing any SMS, imagine a 28-year-old sales rep picking up their phone and texting a lead. Not a marketing department. Not a drip campaign. A person.
+
+**Structure:**
 - Under 160 characters ideally (one SMS segment)
 - NEVER over 320 characters (two segments max)
 - One CTA per text, not multiple asks
 - No links in the first text (build curiosity first)
-- Use line breaks sparingly
-- Casual abbreviations are okay occasionally: "u" for "you", "gonna" for "going to"
-- No hashtags, no excessive emojis (one max, and only if the brand voice supports it)
+
+**Human-sounding rules (NON-NEGOTIABLE):**
+- Occasionally drop a capital letter at the start. Maybe 1 in 5 messages starts lowercase. Real humans don't capitalize every text.
+- Casual contractions: "gonna" not "going to", "wanna" not "want to", "kinda" not "kind of"
+- Sentence fragments are GOOD. "Worth a look?" beats "Would this be worth looking into?"
+- Questions feel more human than statements. "Still thinking about it?" beats "We wanted to follow up."
+- Use periods sparingly in short texts. "Hey just checking in" feels more human than "Hey, just checking in."
+- NEVER use semicolons in SMS. Nobody texts with semicolons.
+- NEVER say "I wanted to reach out" or "per our conversation" or "at your earliest convenience"
+- NEVER use "regarding", "pertaining", "inquire", "utilize", or "leverage"
+- No bullet points in SMS. Nobody texts in bullet points.
+- No "Dear" or "Hello" or "Greetings". Always "Hey" or just start talking.
+- No hashtags. No excessive emojis (one max, only if brand supports it).
+
+**Spelling error rule (for GHL Conversational AI / chatbot ONLY):**
+- Configure 3-5% typo rate in the chatbot. Roughly 1 in 20 messages has a minor typo.
+- Example: "Waht time works best?" or "Thats awesome let me grab you a time"
+- DO NOT put typos in the pre-written SMS templates (client reviews those). Typo rate is for live chatbot responses only.
+- In templates, use informality instead: drop capitals, fragments, casual abbreviations.
+
+**What AI-written SMS looks like (NEVER DO THIS):**
+- "Hello {{first_name}}, I hope this message finds you well. I wanted to reach out regarding the funding opportunity you expressed interest in."
+- "Hi {{first_name}}! We're excited to connect with you about your goals. Our team of experts is ready to help you maximize your potential."
+- "Dear {{first_name}}, Thank you for your interest in our services."
+
+**What human-written SMS looks like (ALWAYS DO THIS):**
+- "hey {{first_name}}, quick question about the funding you signed up for"
+- "this is Blake from Jeff's team. before you apply anywhere theres one thing you should know"
+- "{{first_name}}?"
+- "not trying to blow you up. just dont want you to apply somewhere and mess up your profile before we can help"
+- "real talk, most people with a 700+ score are sitting on 50-150k and dont even know it"
+
+Notice: lowercase starts, dropped apostrophes sometimes, fragments, casual language, zero corporate speak.
 
 ### Email Rules
 - Under 200 words per email
