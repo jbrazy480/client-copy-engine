@@ -9,63 +9,119 @@
 ## WORKFLOW 01: OPT-IN SEQUENCE
 **GHL Name:** 01 -- Opt-In Workflow (AI Calls, SMS & Emails)
 **Trigger:** Tag `new lead`
-**Purpose:** Immediately contact new leads across SMS, email, and AI voice. 6 call attempts over 2 days.
+**Purpose:** AI VOICE CALL is the PRIMARY channel. Fires within 10-30 seconds. SMS and email fire simultaneously as support channels. 8 call attempts over 2 days with SMS between retries.
+
+### Architecture (CRITICAL -- the team must understand this):
+```
+SECOND 0-10:  Lead opts in. Tag "new lead" applied.
+SECOND 10-30: THREE things fire simultaneously:
+              1. AI VOICE CALL via webhook (primary conversion tool)
+              2. SMS sequence starts (3-text staggered pattern)
+              3. Email 1 sends
+
+IF CALL ANSWERED: Agent qualifies live. Books or transfers. ALL workflows stop.
+IF NOT ANSWERED (tag: dna):
+  +10 min:  AI Call #2 + pre-call SMS
+  +30 min:  AI Call #3 + retry SMS
+  +1 hour:  AI Call #4
+  +2 hours: AI Call #5 + retry SMS
+  +4 hours: AI Call #6 (last Day 1)
+  Next 9am: AI Call #7 + retry SMS
+  Next 2pm: AI Call #8 + retry SMS
+  48 hours: Final SMS (first name only)
+
+AFTER ALL ATTEMPTS: Opportunity created > Nurture stage > tag: nurture-active
+```
 
 ### Copy Slots:
-1. **SMS 1** (Immediate, within 30 sec) -- Pattern interrupt, name only. "Hey {{first_name}}"
-2. **SMS 2** (30 sec after SMS 1) -- Company intro + who you are. "This is [agent] from [company]"
-3. **SMS 3** (30 sec after SMS 2) -- Booking link + soft CTA. "Book a time with us here: {{booking_link}}"
-4. **Email 1** (Simultaneous with SMS 1) -- Welcome + value prop + booking link. Subject line required.
-5. **Retry SMS 1** (30 min after no response) -- Different angle, not a repeat
-6. **Retry SMS 2** (2 hours after no response) -- Urgency or social proof angle
-7. **Retry SMS 3** (Next morning 9am) -- Fresh day, new hook
-8. **Retry SMS 4** (Next afternoon 2pm) -- Loss aversion angle
-9. **Retry SMS 5** (48 hours) -- First name only with question mark: "{{first_name}}?"
+
+**PRIMARY: AI Voice Call (fires within 10-30 sec)**
+The voice agent handles the call. Copy for the agent is generated separately via /new-voice-ai-prompt or the existing agent is already built. The copy engine generates the voicemail script the agent leaves when nobody answers.
+
+1. **Voicemail Script** -- Left on any unanswered call. Identifies self, references what they signed up for, states the value of the call, gives callback number. Under 30 seconds.
+
+**SUPPORT: SMS (fires simultaneously with first call)**
+2. **SMS 1** (Immediate, with first call) -- Short, references what they signed up for. NOT just "Hey {{first_name}}" alone. Must connect to the ad/offer they responded to.
+3. **SMS 2** (30 sec after SMS 1) -- Company intro + curiosity hook about why they need to talk before applying anywhere
+4. **SMS 3** (30 sec after SMS 2) -- Booking link + CTA framed as "see your number" not just "book a call"
+
+**SUPPORT: Email (fires simultaneously with first call)**
+5. **Email 1** -- Value-forward welcome. Explains what happens on the call (we pull your profile and show you your actual number). Sets expectation for the call they're about to receive. Subject line required.
+
+**RETRIES: SMS between call attempts (only fires if previous call unanswered)**
+6. **Pre-Call SMS for Retry #2** (10 min) -- "Tried calling, trying again" 
+7. **Retry SMS after Call #3** (30 min) -- Different angle: fear of applying wrong
+8. **Retry SMS after Call #5** (2 hours) -- Empathetic: "not trying to blow you up"
+9. **Retry SMS after Call #7** (Next morning 9am) -- Fresh day, social proof angle
+10. **Retry SMS after Call #8** (Next afternoon 2pm) -- Loss aversion with specific dollar amount
+11. **Final SMS** (48 hours, no more calls) -- First name only with question mark: "{{first_name}}?"
+
+**POST-CALL: Transcript Analysis**
+After every call, the Post Call Transcript Analysis workflow categorizes the outcome:
+- INTERESTED_NOT_BOOKED: Continue sequence
+- NOT_INTERESTED: Tag, remove from calls, keep in email nurture
+- DND: Tag, remove from ALL workflows
 
 ### Rules:
-- Business hours only (9am-5pm client timezone)
-- Stop if appointment is set (tag: `ai appt set`)
+- AI VOICE CALL is the primary channel. Everything else supports it.
+- Business hours only (9am-5pm client timezone) for all calls
+- Stop ALL workflows if appointment is set (tag: `ai appt set`)
+- Max 8 call attempts over 2 days. Do not exceed.
 - After all attempts with no booking, move to nurture (tag: `nurture-active`)
+- The SMS 1 must reference what the lead signed up for (the ad, the webinar, the offer). NOT a generic greeting.
 
 ---
 
-## WORKFLOW 05: NURTURE SEQUENCE
-**GHL Name:** 05 -- Nurture Sequence (SMS & Email)
+## WORKFLOW 05: NURTURE SEQUENCE (MULTI-CHANNEL)
+**GHL Name:** 05 -- Nurture Sequence (Email + SMS + AI Voice Calls)
 **Trigger:** Tag `nurture-active`
-**Purpose:** Long-term drip. Seinfeld-style emails + conversational SMS. Loops when complete.
+**Purpose:** 365-day multi-channel nurture. THREE channels working together: Email (weekly Seinfeld), SMS (paired with emails), AI Voice Calls (Day 3, 7, 14, then monthly). Loops after completion.
+
+### Architecture:
+```
+WEEKLY PATTERN:
+  Day 1: Email (Seinfeld style)
+  Day 2: SMS (references the email topic, 5 min offset)
+
+AI CALL SCHEDULE:
+  Day 3: AI call (warm check-in, gated by ai appt set)
+  Day 7: AI call (value-based, share insight)
+  Day 14: AI call (soft urgency, last early attempt)
+  Then MONTHLY: AI call (Phase 3-5, belief building + reactivation)
+
+PHASE CADENCE:
+  Phase 1 (Weeks 1-2): Daily email + daily SMS + AI calls Day 3, 7, 14
+  Phase 2 (Weeks 3-6): 3 emails/week + 2 SMS/week + AI call weekly
+  Phase 3 (Weeks 7-12): 2 emails/week + 1 SMS/week + AI call biweekly
+  Phase 4 (Weeks 13-26): Weekly email + biweekly SMS + monthly AI call
+  Phase 5 (Weeks 27-52): Weekly email + 2 SMS/month + monthly AI call
+```
 
 ### Copy Slots:
-1. **Email 1** -- Story-driven, educational, soft CTA. Subject + body.
-2. **SMS 1** (1 day after Email 1, 5 min offset) -- Conversational, references the email topic
-3. **Email 2** -- Different angle, new story. Subject + body.
-4. **SMS 2** (1 day after Email 2, 5 min offset)
-5. **Email 3** -- Social proof or case study angle. Subject + body.
-6. **SMS 3** (1 day after Email 3, 5 min offset)
-7. **Email 4** -- Identity/cost of inaction angle. Subject + body.
-8. **SMS 4** (1 day after Email 4, 5 min offset)
-9. **Email 5** -- Authority/proof angle. Subject + body.
-10. **SMS 5** (1 day after Email 5, 5 min offset)
+
+**EMAILS (Seinfeld style, fully written for first 10, outlined for 11-52)**
+1. **Email 1** -- Story-driven. Hook + story + bridge + soft CTA. Under 200 words. Subject required.
+2. **Email 2-10** -- Rotate through 7 core angles (Invisible Cost, Unused Value, Authority, Price Reframe, Identity Shift, Speed, Call-Out)
+3. **Emails 11-52** -- Angle + hook + CTA outline
+
+**SMS (Paired with each email, different angle)**
+4. **SMS 1-10** (paired with emails 1-10) -- Conversational, references the email topic, under 160 chars
+5. **SMS 11-52** -- Hook outline
+
+**AI VOICE CALLS (Voicemail scripts)**
+6. **Day 3 Voicemail** -- Warm check-in, reference their initial interest, offer the free assessment
+7. **Day 7 Voicemail** -- Value-based, share a quick insight or specific result
+8. **Day 14 Voicemail** -- Last early attempt, soft urgency, "last check-in for a bit"
+9. **Monthly Voicemail Template** -- Rotating topics: new client results, rate updates, seasonal windows, direct asks. One template with topic rotation list.
 
 ### Rules:
-- Later waits increase to 30 days between touches
-- Sequence restarts when complete (nobody remembers an email from 9 months ago)
-- Pattern: Email > Wait 1 day (M-F 9-5) > SMS 5 min later > Email > repeat
-
----
-
-## NURTURE SEQUENCE CALLS
-**GHL Name:** Nurture Sequence Calls
-**Trigger:** Tag `new lead` (separate from workflow 01)
-**Purpose:** AI calls on Day 3, 7, 14. Gated by `ai appt set` tag.
-
-### Copy Slots:
-1. **Day 3 Voicemail Script** -- Warm check-in, reference their initial interest
-2. **Day 7 Voicemail Script** -- Value-based, share a quick insight or stat
-3. **Day 14 Voicemail Script** -- Last attempt angle, soft urgency
-
-### Rules:
-- Check for `ai appt set` tag before each call. If present, stop.
-- Voice scripts should reference the offer and sound human.
+- ALL three channels must be generated for every client. Email-only nurture is NOT acceptable.
+- SMS references the email topic but uses a DIFFERENT angle (don't repeat the same message)
+- AI calls gated by `ai appt set` tag. If present, STOP calling.
+- Business hours only for AI calls
+- Later waits increase to 30 days between email touches in Phase 5
+- Sequence restarts after week 52. Nobody remembers an email from 9 months ago.
+- Seinfeld emails: story-driven, entertaining, soft CTA. No corporate language. No em dashes.
 
 ---
 

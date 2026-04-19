@@ -53,7 +53,7 @@ Ask the user for everything upfront. Do NOT ask one question at a time like the 
 
 Say this:
 
-> "I need three things to generate your Client Activation Playbook:
+> "I need four things to generate your Client Activation Playbook:
 >
 > 1. **The Offer Doc** -- Paste the full offer document, or give me the file path. I need: what you sell, who you sell to, pricing, pain points, desired results, differentiators, unique mechanism, and guarantee.
 >
@@ -61,7 +61,11 @@ Say this:
 >
 > 3. **Basic Config** -- Company name, agent name (what the AI introduces itself as), timezone, business hours, and industry/vertical.
 >
+> 4. **Lead Source Details** -- Where do leads come from? (Meta ads, Google, webinar, organic, referral?) What did the ad/landing page promise? What is the CTA that triggers the opt-in? This determines what the FIRST SMS and AI call opening line references. A lead from a webinar signup gets a different first message than a lead from a Meta ad.
+>
 > Optional: If you have a Fireflies transcript from the offer creation call or onboarding call, paste that too. It helps me write copy in the client's actual language.
+>
+> Optional: If the client already has voice AI agents built, tell me which ones exist so I skip generating those.
 >
 > Paste everything and I'll generate the full playbook."
 
@@ -163,18 +167,25 @@ These apply to EVERY piece of copy generated. No exceptions.
 
 ## Quality Checklist (Run Before Delivering)
 
-- [ ] All 10 sections present and complete
-- [ ] Zero em dashes in any copy
+- [ ] All sections present and complete
+- [ ] Zero em dashes in any copy (search the entire output)
 - [ ] All SMS under 320 characters
 - [ ] All emails under 200 words with one CTA
 - [ ] All email subject lines under 50 characters
-- [ ] Voice AI sections have all 12 RizzDial builder sections
-- [ ] Pattern-interrupt openers (not generic "Hi is this...")
+- [ ] Opt-in sequence shows AI VOICE CALL as primary channel (not SMS-first)
+- [ ] Opt-in architecture diagram included showing the full 2-day sequence
+- [ ] Voicemail scripts included for: opt-in calls, nurture Day 3/7/14, monthly calls, no-show recovery
+- [ ] 365-day nurture is MULTI-CHANNEL: email + SMS + AI voice calls (not email-only)
+- [ ] Nurture has phase cadence table showing all 3 channels per phase
+- [ ] SMS 1 references what the lead signed up for (not just "Hey {{first_name}}")
+- [ ] SMS chatbot has 20+ Q&A pairs (not 12)
+- [ ] SMS chatbot knowledge base includes: offer details, qualification criteria, process steps, what makes them different, pricing deflection
+- [ ] Pattern-interrupt openers on all first touches
 - [ ] Sales psychology present (loss aversion, SPIN, assumptive bridges)
-- [ ] SMS chatbot has 8+ objection responses
-- [ ] 365-day nurture has 10 fully written + 42 outlined
+- [ ] AI Call On Reply section shows P1/P2 architecture
+- [ ] Post-Call Transcript Analysis explained (INTERESTED/NOT_INTERESTED/DND)
 - [ ] All copy mirrors the client's language from the offer doc
 - [ ] No corporate speak anywhere
 - [ ] No AI-sounding language
-- [ ] Implementation checklist included at the end
+- [ ] Implementation checklist includes multi-channel nurture items
 - [ ] File saved to client folder
