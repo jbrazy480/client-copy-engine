@@ -3,17 +3,12 @@ name: client-copy-engine
 description: >
   Generates ALL customized copy for a new client's GHL snapshot workflows in one shot.
   Takes an Offer Doc + Marketing Strategy as input and produces a complete Client Activation
-  Playbook with SMS, email, voice AI scripts, chatbot rules, and 365-day nurture copy, all
-  mapped to the 18 GHL workflows. Use when the user says "client copy", "activation playbook",
-  "snapshot copy", "workflow copy", "generate all copy", "client activation", "build the copy",
-  "copy engine", or "generate client messaging".
+  Playbook with SMS, email, chatbot rules, voicemail scripts, and 365-day multi-channel
+  nurture copy, all mapped to the GHL workflows. Does NOT generate voice AI agent prompts
+  (use /new-voice-ai-prompt for that). Use when the user says "client copy", "activation
+  playbook", "snapshot copy", "workflow copy", "generate all copy", "client activation",
+  "build the copy", "copy engine", or "generate client messaging".
 argument-hint: "[paste offer doc + strategy, or reference file paths]"
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Write
-  - Bash
 ---
 
 # Client Copy Engine
@@ -109,24 +104,26 @@ Before generating, provide a brief summary:
 > **Unique Mechanism:** [how they're different]
 > **Lead Source:** [where leads come from]
 >
-> I'm generating copy for all 18 GHL workflows, 2 voice AI agents, SMS chatbot, and the 365-day nurture. This will take a minute. Ready?"
+> I'm generating copy for all GHL workflow messaging, SMS chatbot, and the 365-day multi-channel nurture. This will take a minute. Ready?"
+>
+> **Note:** Voice AI agent scripts (the 12-section RizzDial prompts) are NOT included. Those are built separately using `/new-voice-ai-prompt`. If you need voice agents, run that skill after this one.
 
 Wait for confirmation, then generate.
 
 ### Step 5: Generate the Full Playbook
 
-Follow the exact output format in `assets/output-template.md`. Generate ALL 10 sections in order without stopping:
+Follow the exact output format in `assets/output-template.md`. Generate ALL 8 sections in order without stopping:
 
-1. **Opt-In Sequence** (9 messages) -- Read sms-patterns.md and email-patterns.md
-2. **Nurture Sequence** (10 messages) -- Read email-patterns.md (Seinfeld framework)
-3. **Appointment Sequence** (8 messages) -- Read sms-patterns.md and email-patterns.md
-4. **No-Show Recovery** (4 messages + voicemail) -- Read sms-patterns.md
-5. **Post-Sale / Closed Won** (8 messages + 2 voicemails) -- Read email-patterns.md
-6. **Database Reactivation** (6 messages) -- Read sms-patterns.md
-7. **SMS Chatbot Configuration** -- Read chatbot-rules.md
-8. **Voice AI: Speed-to-Lead** (12 sections) -- Read voice-agent-format.md, then GENERATION-ENGINE.md
-9. **Voice AI: No-Show Recovery** (12 sections) -- Read voice-agent-format.md
-10. **365-Day Email Nurture** (10 full + 42 outlines) -- Read nurture-365.md
+1. **Opt-In Sequence** (SMS + email + retries + voicemail + architecture diagram) -- Read sms-patterns.md and email-patterns.md
+2. **Nurture Sequence** (emails + paired SMS) -- Read email-patterns.md (Seinfeld framework)
+3. **Appointment Sequence** (confirmation + reminders + voicemail) -- Read sms-patterns.md and email-patterns.md
+4. **No-Show Recovery** (SMS + voicemail) -- Read sms-patterns.md
+5. **Post-Sale / Closed Won** (welcome through referral + voicemails) -- Read email-patterns.md
+6. **Database Reactivation** (3 workflow angles + sentiment responses) -- Read sms-patterns.md
+7. **SMS Chatbot Configuration** (knowledge base + 20+ Q&A + objections + booking flow) -- Read chatbot-rules.md
+8. **365-Day Multi-Channel Nurture** (emails + paired SMS + AI call voicemail scripts) -- Read nurture-365.md
+
+**DO NOT generate voice AI agent scripts (12-section RizzDial prompts).** Those are a separate skill. Only generate voicemail scripts (what the agent leaves when nobody answers). Voicemail scripts are copy. Agent prompts are not. If the user explicitly asks for voice agent scripts, tell them to use `/new-voice-ai-prompt`.
 
 ### Step 6: Save the Output
 
