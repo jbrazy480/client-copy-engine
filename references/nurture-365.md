@@ -1,131 +1,175 @@
-# 365-Day Email Nurture Framework
+# 365-Day Time-Based Nurture Framework
 
-> 52-week Seinfeld-style email sequence that loops.
-> Weeks 1-10: fully written. Weeks 11-52: angle + hook + CTA outline.
-> Uses the 5 Persuasion Pillars and 7 Core Angles rotated throughout.
-
----
-
-## PHASE BREAKDOWN
-
-### Phase 1: Days 0-14 / Weeks 1-2 (Convert Hot Leads)
-- **Frequency:** Daily email touches
-- **Tone:** Urgent but not desperate. They just raised their hand. Strike while hot.
-- **Messaging:** Recap their goal, remind why they booked/inquired, cost of waiting, re-anchor the value, stack proof, push decisive action
-- **Angles:** Identity, Cost of Inaction, Speed
-
-### Phase 2: Days 15-45 / Weeks 3-6 (Convert Warm Leads)
-- **Frequency:** 3 emails per week
-- **Tone:** Story-driven. Build relationship. Show you understand their world.
-- **Messaging:** Transformation stories, visibility/opportunity pain, behind-the-scenes, industry insights
-- **Angles:** Unused Value, Authority, Proof of Implementation
-
-### Phase 3: Days 46-90 / Weeks 7-12 (Revive Dormant Leads)
-- **Frequency:** 2 emails per week
-- **Tone:** "Still thinking?" Direct but not pushy. Case studies land here.
-- **Messaging:** "Still dealing with [pain]?", cost of invisibility/inaction, case studies with numbers, program/service structure
-- **Angles:** Cost of Inaction, Price Reframe, Call-Out
-
-### Phase 4: Days 91-180 / Weeks 13-26 (Belief Building)
-- **Frequency:** Weekly email
-- **Tone:** Thought leadership. Position as the expert. Teach without giving away the farm.
-- **Messaging:** Industry lessons, frameworks, opportunity cost, "here's what we're seeing in [industry]"
-- **Angles:** Authority, Identity Shift, Opportunity
-
-### Phase 5: Days 181-365 / Weeks 27-52 (Stay Top of Mind)
-- **Frequency:** Weekly email
-- **Tone:** Casual check-ins mixed with proof. New cohort/offering announcements. Seasonal.
-- **Messaging:** Milestone-based, new offerings, social proof roundups, seasonal resets ("new year, new quarter"), "we just helped [client] do [result]"
-- **Angles:** Rotate through all 7
+> For clients who use a time-based (calendar-driven) nurture, not journey-stage.
+> If the client uses journey-stage nurture, generate an Email Library instead (see email-patterns.md).
+>
+> 52-week email + SMS sequence that loops. Weeks 1-10 fully written. Weeks 11-52 angle + hook + CTA outline.
 
 ---
 
-## THE 5 PERSUASION PILLARS
+## WHEN TO USE THIS FRAMEWORK
 
-Use these as the emotional backbone. Every email should lean on at least one.
+The client explicitly marked **"time-based"** for the Nurture Model (SKILL.md input 6).
 
-1. **Identity** -- "You are capable of more than the life/business you're currently running."
-2. **Cost of Inaction** -- "What happens if you stay where you are for another year?"
-3. **Opportunity** -- "There is money/growth/freedom attached to fixing this."
-4. **Authority** -- "We've done this. We teach this. This is not theory."
-5. **Proof of Implementation** -- "People who do the work get transformed."
+Indicators they want time-based:
+- They think about nurture as "Day 1, Day 7, Day 30 emails"
+- They run the same sequence for every lead regardless of where they are in the journey
+- They have a fixed calendar automation already in place (or want one built)
+
+If the client says "my emails run based on where the lead is in their buyer journey" or "different emails fire based on lead stage," that's journey-stage — generate an Email Library instead, NOT this calendar.
 
 ---
 
-## THE 7 CORE EMAIL ANGLES
+## THE 5-PHASE STRUCTURE
 
-Rotate through these. Each can be reused with different stories/examples.
+### Phase 1: Days 0-14 / Weeks 1-2 — Convert Hot Leads
+- Frequency: Daily email + daily SMS
+- Tone: Urgent but not desperate. They just raised their hand.
+- Archetypes to rotate: Story (pain) → Insight (mechanism) → Social proof → Identity shift → Direct ask
+- Angles to lead with: Pain + Loss Aversion, Cost of Inaction, Speed
 
-### Angle 1: The Invisible Cost
-**Core idea:** What they're losing by NOT acting.
-**Hook pattern:** "You're spending $X on [thing]. But $Y of that is being wasted because [reason]."
-**Example subject:** "The $47K you threw away last quarter"
+### Phase 2: Weeks 3-6 — Convert Warm Leads
+- Frequency: 3 emails per week + 2 SMS per week
+- Tone: Story-driven. Build relationship. Show you understand their world.
+- Archetypes: Mostly Story and Insight
+- Angles: Authority, Social Proof, Identity Shift
 
-### Angle 2: The Unused Value
-**Core idea:** They already have something valuable that's sitting unused.
-**Hook pattern:** "Your [leads/data/story/skills] are either an asset or they die unused."
-**Example subject:** "You're sitting on a goldmine and don't even know it"
+### Phase 3: Weeks 7-12 — Revive Dormant
+- Frequency: 2 emails per week + 1 SMS per week
+- Tone: "Still thinking?" Direct but not pushy.
+- Archetypes: Insight + Direct Ask
+- Angles: Cost of Inaction, Price Reframe, Direct Ask
 
-### Angle 3: The Authority
-**Core idea:** Why learn from someone who hasn't done it?
-**Hook pattern:** "We've [done X] for [Y companies]. Here's what we learned."
-**Example subject:** "What 100,000 calls per day taught us about [topic]"
+### Phase 4: Weeks 13-26 — Belief Building
+- Frequency: Weekly email + biweekly SMS
+- Tone: Thought leadership. Teach without giving everything away.
+- Archetypes: Insight + Story
+- Angles: Authority, Identity Shift (rotate)
 
-### Angle 4: The Price Reframe
-**Core idea:** The investment isn't expensive. Staying stuck is expensive.
-**Hook pattern:** "This isn't a cost. Staying where you are is the cost."
-**Example subject:** "The most expensive thing you're doing right now"
+### Phase 5: Weeks 27-52 — Stay Top of Mind
+- Frequency: Weekly email + 2 SMS per month
+- Tone: Casual. Mix of proof and seasonal.
+- Archetypes: Story + Seasonal
+- Angles: Rotate all six
 
-### Angle 5: The Identity Shift
-**Core idea:** The problem isn't what they think it is.
-**Hook pattern:** "You don't have a [surface problem] problem. You have a [root cause] problem."
-**Example subject:** "Your ads aren't broken. Your follow-up is."
+### Loop rule
+After week 52, sequence restarts at week 1. Nobody remembers an email from 9 months ago.
 
-### Angle 6: The Speed
-**Core idea:** You don't need years. You need a system.
-**Hook pattern:** "Most [industry] owners think [result] takes [long time]. It doesn't."
-**Example subject:** "We built this in 48 hours. Not kidding."
+---
 
-### Angle 7: The Call-Out
-**Core idea:** Don't start if you're not going to commit.
-**Hook pattern:** "This only works for people who [commitment]. If that's not you, no worries."
-**Example subject:** "Don't read this if you're comfortable where you are"
+## THE SIX ANGLES (rotate across the 52 weeks)
+
+Each angle has its own "voice" and purpose. Rotate so no angle repeats more than 8-10 times across the full 52-week cycle.
+
+### 1. Pain + Loss Aversion
+Hook pattern: "The [specific dollar] mistake nobody talks about"
+What it does: Frames what they lose by not acting. Visceral, specific, numerical.
+
+### 2. Authority
+Hook pattern: "Why we [unusual practice]" / "What banks actually look at"
+What it does: Positions the expertise behind the service. Earns trust.
+
+### 3. Social Proof
+Hook pattern: "[Specific name] got [specific result]. Here's how."
+What it does: Specific real people with specific real results. Bypasses skepticism.
+
+### 4. Identity Shift
+Hook pattern: "You don't have a [surface problem] problem"
+What it does: Reframes the problem. The reader feels seen and re-educated.
+
+### 5. Direct Ask
+Hook pattern: "Still thinking about it?" / "{{first_name}}?"
+What it does: Clean yes-or-no. Easy exit. Forces decision.
+
+### 6. Seasonal / Cyclical
+Hook pattern: "New quarter, new numbers" / "The holiday [opportunity] window"
+What it does: Time-based reason to act now. Fresh narrative for long-running nurture.
+
+---
+
+## PHASE CADENCE TABLE
+
+| Phase | Weeks | Email | SMS | Notes |
+|-------|-------|-------|-----|-------|
+| 1 | 1-2 | Daily | Daily | Hot leads, hit every angle |
+| 2 | 3-6 | 3/week | 2/week | Story-heavy |
+| 3 | 7-12 | 2/week | 1/week | Direct asks land here |
+| 4 | 13-26 | Weekly | Biweekly | Thought leadership |
+| 5 | 27-52 | Weekly | 2/month | Casual + seasonal |
+
+---
+
+## PAIRED SMS RULE
+
+SMS in this nurture is paired with email. Structure:
+
+- Email fires Day X
+- SMS fires Day X+1, references the email topic but uses a DIFFERENT angle
+
+**Wrong:** Email about $47K mistake → SMS that says "Check out the email about the $47K mistake"
+**Right:** Email about $47K mistake → SMS: "Quick math: if you apply wrong, you blow through your best lenders in 3 weeks. Fixable though."
+
+The SMS doesn't recap the email — it drops a different insight that reinforces the same underlying idea. The reader gets TWO touches on the same big idea without repetition.
 
 ---
 
 ## WEEKLY OUTLINE STRUCTURE (Weeks 11-52)
 
-For each week, provide:
+For each week beyond 10, provide:
 
 ```
-**Week [X] -- [Phase Name]**
-Angle: [which of the 7]
-Pillar: [which of the 5]
-Subject: [subject line]
-Hook: [opening 1-2 sentences]
-Story concept: [what the story is about, 1 sentence]
-CTA: [what action, 1 sentence]
+Week [X] — [Phase Name]
+Angle: [one of the 6]
+Email Subject: [under 50 chars]
+Email Hook: [opening 1-2 sentences]
+Story Concept: [what the story/insight is, 1 sentence]
+Email CTA: [what action]
+SMS Hook: [under 160 chars, different angle than email]
 ```
 
 ---
 
 ## GENERATION INSTRUCTIONS
 
-When generating the 365-day nurture for a client:
+When generating the 52-week nurture for a time-based client:
 
-1. Read the client's offer doc to extract: ICP, pain points, desired results, proof points, unique mechanism, differentiators
-2. Map the 7 angles to the client's specific business (replace generic placeholders with their specifics)
-3. Write weeks 1-10 as fully complete Seinfeld-style emails (subject + body)
-4. For weeks 11-52, provide the outline format above
-5. Rotate through all 7 angles across the 52 weeks, ensuring no angle repeats more than 8 times
-6. Phase 1 emails should be more direct and urgent. Phase 5 should be more casual and story-heavy.
-7. Every email must have a subject line under 50 chars
-8. No em dashes anywhere
-9. One soft CTA per email
-10. Sequence restarts at week 53 (loops forever)
+1. **Mine the offer doc** for the client's exact language, specific results, named clients, real dollar amounts. Every angle you generate must use their specifics, not generic placeholders.
+2. **Write weeks 1-10 fully** (subject + body) using the six angles in rotation. Follow the archetypes defined in email-patterns.md.
+3. **Outline weeks 11-52** using the structure above. Each outline is enough for the client (or the automation team) to expand into a full email when ready.
+4. **Rotate angles strategically** — no angle repeats more than 8-10 times across the 52 weeks. Pain and Social Proof can skew higher in Phases 1-2; Seasonal and Direct Ask skew higher in Phases 4-5.
+5. **Pair every email with an SMS** that uses a different angle targeting the same idea.
+6. **Every email under 200 words** with one CTA.
+7. **Every subject under 50 characters.**
+8. **Zero em dashes. Zero voicemails.** Applies throughout.
+9. **Loop rule:** Sequence restarts at week 53 → week 1. Automation-only, no manual trigger needed.
 
 ---
 
-## RESTART RULE
+## AI CALLING DURING LONG-TERM NURTURE (NOT DEFAULT)
 
-After week 52, the sequence restarts at week 1. This is intentional. Nobody remembers an email from 9 months ago. The system runs continuously with no manual intervention needed.
+Long-tail AI dialing during the 52-week nurture is OPTIONAL and generated only if the client explicitly asks for it.
+
+If the client wants long-tail dialing on top of the nurture emails/SMS:
+- Use the same `double_call: true` pattern from Workflow 01 (see snapshot-workflows.md)
+- Fire once per week in Phase 2, once biweekly in Phase 3, once per month in Phases 4-5
+- Gate every dial on `ai-agent-booked` tag absence (skip anyone who already booked)
+- Pre-call SMS 60s before the dial, same rules as Workflow 01
+- NO voicemails — RizzDial's `double_call: true` with voicemail detection disabled
+
+**Default:** Long-tail nurture is EMAIL + SMS only. AI dialing handled by Workflow 01 for the first 14 days only.
+
+---
+
+## WHY THIS FRAMEWORK EXISTS
+
+Time-based calendars work when:
+- The client doesn't want to think about lead stages
+- Their business has a long sales cycle where consistent touch over time matters more than stage-specific messaging
+- They want a fire-and-forget system that runs for a year without intervention
+
+Time-based calendars fail when:
+- The client's leads convert on different timelines (some in days, some in months)
+- The client has distinct buyer stages with different objections
+- The client wants to send different emails to different segments
+
+For those cases, use journey-stage (Email Library by angle) instead.
